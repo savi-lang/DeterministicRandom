@@ -1,0 +1,16 @@
+:manifest lib DeterministicRandom
+  :sources "src/*.savi"
+
+  :dependency Random v0
+    :from "github:savi-lang/Random"
+
+:manifest bin "spec"
+  :copies DeterministicRandom
+  :sources "spec/*.savi"
+
+  :dependency Spec v0
+    :from "github:savi-lang/Spec"
+    :depends on Map
+
+  :transitive dependency Map v0
+    :from "github:savi-lang/Map"
